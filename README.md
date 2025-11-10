@@ -11,6 +11,7 @@ Since FAT32 doesn’t support files larger than 4 GB, simply splitting the video
 64 bit OS will work (32 bit untested)
 Windows 7+
 .NET 4.6+
+FFmpeg 7.0 + (earlier untested)
 
 # How to set-up?
 Place "ffmpeg.exe" in the "ffmpeg" folder. 
