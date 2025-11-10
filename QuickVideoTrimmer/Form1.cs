@@ -34,6 +34,10 @@ namespace Video_Trimmer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!File.Exists(Path.Combine("ffmpeg", "ffmpeg.exe")))
+            {
+                MessageBox.Show("FFmpeg not found in this directory. Check README and put it here: " + Directory.GetCurrentDirectory() + "\\ffmpeg\\ffmpeg.exe", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
@@ -103,7 +107,7 @@ namespace Video_Trimmer
             CheckboxChange();
 
             OGFileName = Path.GetFileName(OGFilePath == "" ? "D:\\" : OGFilePath).Split('.')[0];
-            ContentType = Path.GetFileName(OGFilePath == "" ? "D:\\" : OGFilePath).Split('.')[1];
+            ContentType = Path.GetFileName(OGFilePath == "" ? "D:\\" : OGFilePath).Split('.').Last();
 
             if (OGFileName != "" && NewFileNameInput.Text == "")
             {
@@ -240,6 +244,7 @@ namespace Video_Trimmer
             {
                 proc.CloseMainWindow();
                 proc.Close();
+                MessageBox.Show("There was an unexpected error: " + e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 isVideoBeingProcessed = false;
                 return;
             }
