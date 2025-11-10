@@ -13,12 +13,12 @@ Since FAT32 doesn’t support files larger than 4 GB, simply splitting the video
 - .NET 4.6+
 - FFmpeg 7.0 + (earlier untested)
 
-# How to set-up?
+# How to set up?
 Place "ffmpeg.exe" in the "ffmpeg" folder. 
 The folder tree should now look like this:
 
 \[app-path]
-     \ffmppeg
+     \ffmpeg
           ffmpeg.exe
      Microsoft.WindowsAPICodePack.dll
      Microsoft.WindowsAPICodePack.Shell.dll
